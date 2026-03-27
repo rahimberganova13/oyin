@@ -72,16 +72,15 @@ function golib(b, kim) {
         }
       }
       if (sanoq == 3) {
-        document.getElementsByTagName('div')[ehtimol[j][0]-1].style.transform = 'scale(1.2)';
-        document.getElementsByTagName('div')[ehtimol[j][1]-1].style.transform = 'scale(1.2)';
-        document.getElementsByTagName('div')[ehtimol[j][2]-1].style.transform = 'scale(1.2)';
-        setTimeout(() => {
-          bosqich3.style.display = "none";
-          bosqich4.style.display = "flex";
-          bosqich4.innerHTML = `${ism1} G'alaba qozondi.`;
-          clearInterval(interval);
-        }, 4000);
+        document.getElementsByTagName('div')[ehtimol[j][0]]
+        setTimeout(()=>{
+        bosqich3.style.display = "none";
+        bosqich4.style.display = "flex";
+        bosqich4.innerHTML = `${ism1} G'alaba qozondi.`;
+        clearInterval(interval);
         return;
+        })
+       
       }
     }
   } else if (kim == "O") {
@@ -94,37 +93,30 @@ function golib(b, kim) {
         }
       }
       if (sanoq == 3) {
-        document.getElementsByTagName('div')[ehtimol[j][0]-1].style.transform = 'scale(1.2)';
-        document.getElementsByTagName('div')[ehtimol[j][1]-1].style.transform = 'scale(1.2)';
-        document.getElementsByTagName('div')[ehtimol[j][2]-1].style.transform = 'scale(1.2)';
-        setTimeout(() => {
-          bosqich3.style.display = "none";
-          bosqich4.style.display = "flex";
-          bosqich4.innerHTML = `${ism2} G'alaba qozondi.`;
-          clearInterval(interval);
-        }, 4000);
+        bosqich3.style.display = "none";
+        bosqich4.style.display = "flex";
+        bosqich4.innerHTML = `${ism2} G'alaba qozondi.`;
+        clearInterval(interval);
         return;
       }
     }
   }
   if (Olar.length + Xlar.length == 9) {
-    setTimeout(() => {
-      bosqich3.style.display = "none";
-      bosqich4.style.display = "flex";
-      bosqich4.innerHTML = `Dostlik G'alaba qozondi.`;
-      clearInterval(interval);
-    }, 2000);
+    bosqich3.style.display = "none";
+    bosqich4.style.display = "flex";
+    bosqich4.innerHTML = `Dostlik G'alaba qozondi.`;
+    clearInterval(interval);
     return;
   }
-  
+  return console.log("kombinatsiya yuq");
 }
 
 function sanoq() {
   clearInterval(interval);
-
   let sanoq = 3;
   interval = setInterval(() => {
     document.getElementById("vaqt").innerHTML = sanoq + " s";
+    console.log("ishladi");
     if (sanoq == 0) {
       if (Olar.length + Xlar.length != 9) {
         avtoBelgila();
@@ -143,8 +135,8 @@ function avtoBelgila() {
       !Olar.includes(tahmin) &&
       !Xlar.includes(tahmin)
     ) {
-      clearInterval(interval);
-
+      clearInterval(interval)
+      sanoq();
       if (raqam % 2 == 0) {
         document.getElementsByTagName("h3")[0].innerHTML = ism1 + " navbati";
         Olar.push(tahmin);
@@ -157,7 +149,6 @@ function avtoBelgila() {
         golib(tahmin, "X");
       }
       raqam++;
-      sanoq();
       break;
     }
   }

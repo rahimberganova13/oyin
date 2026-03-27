@@ -70,32 +70,30 @@ body {
     user-select: none;
     transition: 1s linear;
 }
-div:nth-child(3) {
-    transform-origin: bottom right;
+div:nth-child(1){
+    transform-origin: right bottom ;
 }
-div:nth-child(4) {
-    transform-origin: bottom center;
+div:nth-child(2){
+    transform-origin:  center bottom;
 }
-div:nth-child(5) {
-    transform-origin: bottom left;
+div:nth-child(3){
+    transform-origin:  left bottom;
 }
-
-div:nth-child(6) {
+div:nth-child(4){
+    transform-origin:  right center;
+}
+div:nth-child(6){
+    transform-origin:  left center ;
+}
+div:nth-child(7){
     transform-origin: center right;
 }
-div:nth-child(8) {
-    transform-origin: center left;
+div:nth-child(8){
+    transform-origin:   top center;
 }
-div:nth-child(9) {
-    transform-origin: top right;
+div:nth-child(9){
+    transform-origin: center right;
 }
-div:nth-child(10) {
-    transform-origin: top center;
-}
-div:nth-child(11) {
-    transform-origin: top left;
-}
-
 
 .bolim3 {
     box-shadow: 0 0 5px green;
